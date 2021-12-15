@@ -14,6 +14,7 @@ const flatten = (arr) => {
     if (Array.isArray(element)) {
       //this if statement will be entered if a nested array is detected
       //Need to recursively call flatten and add result to resultArray
+      resultArray = resultArray.concat(flatten(element))
     } else {
       resultArray.push(element);
     }
