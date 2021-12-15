@@ -1,3 +1,4 @@
+//NOTE: To run this flatten function, cd into the project folder in terminal and enter command `node flatten.js`
 //TestData:
 const testArray1 = [1, 2, 3, 4];
 const testArray2 = [1, [2, 3], [4, [5, 6]], 7];
@@ -12,10 +13,10 @@ const flatten = (arr) => {
   //iterate through array and recursively flatten as subarrays are detected
   arr.forEach((element) => {
     if (Array.isArray(element)) {
-      //this if statement will be entered if a nested array is detected
-      //Need to recursively call flatten and add result to resultArray
-      resultArray = resultArray.concat(flatten(element))
+      //this if statement will be entered if a nested array is detected and function will be called recursively
+      resultArray = resultArray.concat(flatten(element));
     } else {
+      //push to result array if not a nested array
       resultArray.push(element);
     }
   });
