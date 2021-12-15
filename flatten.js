@@ -5,16 +5,22 @@ const testArray3 = [23, [40], 36, [12, 13, [45, 76, [80, 82, [91, 92], 29]], 13]
 const testArray4 = [100, [200, [300, [400, [500, 600], 700], 800], 900], 1000];
 const testArray5 = ["a", ["b", "c"], ["d", ["e", "f"], "g"], "h", "i"];
 
-//Flatten function: 
+//Flatten function:
 const flatten = (arr) => {
-    let resultArray = [];
+  let resultArray = [];
 
-    //iterate through array and recursively flatten as subarrays are detected
+  //iterate through array and recursively flatten as subarrays are detected
+  arr.forEach((element) => {
+    if (Array.isArray(element)) {
+      //this if statement will be entered if a nested array is detected
+      //Need to recursively call flatten and add result to resultArray
+    } else {
+      resultArray.push(element);
+    }
+  });
 
-    return resultArray;
-}
-
-
+  return resultArray;
+};
 
 //Application of flatten function using test data:
 
